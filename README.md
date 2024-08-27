@@ -124,14 +124,11 @@ while 1:
 ## OUTPUT
 
 ## CLIENT
-```
 <img width="625" alt="image" src="https://github.com/user-attachments/assets/a138283b-6698-43f6-9886-ce4c41a9710e">
-```
-## SERVER
-```
-<img width="625" alt="image" src="https://github.com/user-attachments/assets/b09e53ab-4c7d-4c55-bc48-3725b42c3b8f">
-```
-## Result:
 
+## SERVER
+<img width="625" alt="image" src="https://github.com/user-attachments/assets/b09e53ab-4c7d-4c55-bc48-3725b42c3b8f">
+
+## Result:
 Thus the study on Client Server Chat Applications has been performed
 
