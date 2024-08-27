@@ -76,21 +76,60 @@ Client-server chat applications are foundational to real-time communication over
 ## PROGRAM
 ## CLIENT
 ```
+import socket
 
+s = socket.socket()
+host = input(str('Enter hostname or host IP : '))
+port = 8080
+s.connect((host, port))
+print('Connected to chat server')
+while 1:
+    incoming_message = s.recv(1024)
+    incoming_message = incoming_message.decode()
+    print(' Server : ', incoming_message)
+    print()
+    message = input(str('>> '))
+    message = message.encode()
+    s.send(message)
+    print('Sent')
+    print()
 ```
 ## SERVER
 ```
+import socket
 
+s = socket.socket()
+host = socket.gethostname()
+print(' Server will start on host : ', host)
+port = 8080
+s.bind((host, port))
+print()
+print('Waiting for connection')
+print()
+s.listen(1)
+conn, addr = s.accept()
+print(addr, ' Has connected to the server')
+print()
+while 1:
+    message = input(str('>> '))
+    message = message.encode()
+    conn.send(message)
+    print('Sent')
+    print()
+    incoming_message = conn.recv(1024)
+    incoming_message = incoming_message.decode()
+    print(' Client : ', incoming_message)
+    print()
 ```
 ## OUTPUT
 
 ## CLIENT
 ```
-
+<img width="625" alt="image" src="https://github.com/user-attachments/assets/a138283b-6698-43f6-9886-ce4c41a9710e">
 ```
 ## SERVER
 ```
-
+<img width="625" alt="image" src="https://github.com/user-attachments/assets/b09e53ab-4c7d-4c55-bc48-3725b42c3b8f">
 ```
 ## Result:
 
